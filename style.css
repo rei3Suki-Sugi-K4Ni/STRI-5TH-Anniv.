@@ -127,8 +127,8 @@ footer {
   border-top: 1px solid #bababa;
 }
 .profile-section p {
-  padding: 0 1em;
-  line-height: 1.8;
+  padding: 0 0.5em;
+  line-height: 1;
 }
 
 /* メッセージ封筒 */
