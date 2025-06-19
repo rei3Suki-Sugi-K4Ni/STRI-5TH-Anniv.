@@ -19,10 +19,26 @@ a:hover {
   text-decoration: underline;
   color: #f5919e;
 }
-header img {
-  width: 50%;
+header {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+.logo {
+  width: 15%;
+  max-width: 200px;
   height: auto;
   display: block;
+  margin: 10px auto;  /* ←余白はここで調整。10px前後がちょうどいい */
+  opacity: 0.9;
+}
+.banner {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 10px auto;  /* ←余白はここで調整。10px前後がちょうどいい */
+  opacity: 0.9;
 }
 footer {
   text-align: center;
