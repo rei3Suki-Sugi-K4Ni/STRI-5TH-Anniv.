@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>ゲーム｜世田れい5周年ファンサイト</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <style>
+    .game-selector {
+      text-align: center;
+      margin: 0em 0;
+    }
+    .game-selector button {
+      font-family: 'しねきゃぷしょん', sans-serif;
+      background-color: #ffb6c1;
+      color: #1c1227;
+      border: none;
+      border-radius: 10px;
+      padding: 0.5em 1.2em;
+      margin: 0 0.2em;
+      cursor: pointer;
+    }
+    .game-selector button.active {
+      background-color: #fff;
+      color: #ff1493;
+    }
+    .game-frame {
+      width: 100%;
+      height: 500px;
+      margin: 0 auto 1em;
+      display: none;
+      border: 2px solid #ffb6c1;
+      border-radius: 0px;
+    }
+    .game-frame.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    @setareiASMR 5TH ANNIVERSARY   
+  </header>
+
+  <nav class="nav-tabs">
+    <a href="index.html">トップ</a>
+    <a href="profile.html">プロフィール</a>
+    <a href="messages.html">メッセージ</a>
+    <a href="game.html">ゲーム</a>
+    <a href="survey.html">アンケート</a>
+  </nav>
+
+  <main>
+    <h2 style="text-align: center;">タイピングゲーム</h2>
+    <div class="game-selector">
+      <button id="pcBtn" class="active">PC版</button>
+      <button id="mobileBtn">スマホ版</button>
+    </div>
+    <div style="text-align: center; margin: 0.3em 0;">    <!-- 中断ボタン -->
+    <button id="resetBtn" onclick="location.reload()" class="reset-button hidden">中断する</button>
+    </div>
+  <!-- ▼ここから倍率調整を加えたゲーム表示部 -->
+  <div class="game-frame-wrapper">
+    <div class="game-frame-scaler">
+<!-- 最初は src を持たせず、クリック時に設定する -->
+<iframe id="pcGame" class="game-frame" title="PC版ゲーム"></iframe>
+<iframe id="mobileGame" class="game-frame" title="スマホ版ゲーム"></iframe>
+    </div>
+  </div>
+  
+  </main>
+
+  <footer>
+    <p>&copy; 2025 rei3daisukiclub🦀</p>
+  </footer>
+
+  <script>
+const pcBtn = document.getElementById('pcBtn');
+const mobileBtn = document.getElementById('mobileBtn');
+const pcGame = document.getElementById('pcGame');
+const mobileGame = document.getElementById('mobileGame');
+const resetBtn = document.getElementById('resetBtn');
+
+pcBtn.addEventListener('click', () => {
+  pcBtn.classList.add('active');
+  mobileBtn.classList.remove('active');
+  pcGame.classList.add('active');
+  mobileGame.classList.remove('active');
+
+  // srcが未設定なら設定
+  if (!pcGame.src) {
+    pcGame.src = "https://rei3sukisugikani.github.io/setarei_5th_typing/";
+  }
+});
+
+mobileBtn.addEventListener('click', () => {
+  mobileBtn.classList.add('active');
+  pcBtn.classList.remove('active');
+  mobileGame.classList.add('active');
+  pcGame.classList.remove('active');
+
+  if (!mobileGame.src) {
+    mobileGame.src = "https://rei3sukisugikani.github.io/setarei-5th-typing-mobile/";
+  }
+});
+
+// ゲーム読み込み時に中断ボタンを表示
+[pcGame, mobileGame].forEach(frame => {
+  frame.addEventListener('load', () => {
+    resetBtn.classList.remove('hidden');
+  });
+});
+
+  </script>
+</body>
+</html>
