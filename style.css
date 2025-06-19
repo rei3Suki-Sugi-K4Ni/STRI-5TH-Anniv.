@@ -37,7 +37,7 @@ footer {
 @media screen and (max-width: 600px) {
   .profile-table,
   .detail-table {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
   }
 }
 /* 雨エフェクト */
@@ -107,7 +107,7 @@ footer {
 .profile-table, .detail-table {
   width: 90%;
   max-width: 700px;
-  margin: 20px auto;
+  margin: 10px auto;
   border-collapse: collapse;
   background: whitesmoke;
   color: #333;
@@ -128,7 +128,7 @@ footer {
 }
 .profile-section p {
   padding: 0 0.5em;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 /* メッセージ封筒 */
