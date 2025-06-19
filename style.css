@@ -35,7 +35,7 @@ header {
 /* スマホ対応（画面が600px以下のとき） */
 @media screen and (max-width: 600px) {
   .logo {
-    width: 80%;
+    width: 15%;
     max-width: 90vw; /* viewport幅に合わせる */
     margin: 10px auto;
   }
