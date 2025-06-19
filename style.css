@@ -32,6 +32,14 @@ header {
   margin: 10px auto;  /* ←余白はここで調整。10px前後がちょうどいい */
   opacity: 0.9;
 }
+/* スマホ対応（画面が600px以下のとき） */
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 80%;
+    max-width: 90vw; /* viewport幅に合わせる */
+    margin: 10px auto;
+  }
+}
 .banner {
   width: 100%;
   max-width: 700px;
