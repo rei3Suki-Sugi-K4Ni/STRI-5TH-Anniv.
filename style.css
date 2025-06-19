@@ -34,7 +34,12 @@ footer {
   color: #848383;
   font-size: 0.6rem;
 }
-
+@media screen and (max-width: 600px) {
+  .profile-table,
+  .detail-table {
+    font-size: 0.85rem;
+  }
+}
 /* 雨エフェクト */
 .rain {
   position: fixed;
