@@ -11,11 +11,20 @@ body {
   background-color: #1c1227;
   font-family: "やさしさゴシック", sans-serif;
   color: whitesmoke;
+  font-size: 14px;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   position: relative;
   overflow-x: hidden;
 }
+/* ▼ PCなど画面が広いときだけ上書きする */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+    padding: 30px;
+  }
+}
+
 a {
   color: #f5919e;
 }
