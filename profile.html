@@ -45,11 +45,20 @@
       padding: 0.4em 0.8em;
       background-color: #222;
       border-radius: 6px;
-      font-family: "しねきゃぷしょん", sans-serif;
+      font-family: "やさしさゴシック", sans-serif;
     }
     .accordion-content ul {
       padding-left: 0.8em;
       margin-top: 0.1em;
+      list-style-type: disc;
+    }
+    /* 2層目リスト用（少しインデント） */
+    .accordion--content ul .second-level {
+      padding-left: 1.5em;
+    }
+    /* 3層目リスト用（さらにインデント） */
+    .accordion--content ul .third-level {
+      padding-left: 1.5em;
     }
     .accordion-content a {
       color: rgb(200, 199, 199);
