@@ -120,10 +120,7 @@ footer {
   justify-content: center;
   background-color: #333;
   padding: 0.5em 0;
-  flex-wrap: nowrap; /* 折り返し禁止 */
-  font-size: min(4vw, 16px); /* 画面幅に合わせてフォントサイズ調整 */
-  flex-shrink: 1; /* 縮小可 */
-  overflow-x: auto; /* はみ出す時だけ横スクロール */
+  flex-wrap: wrap;
 }
 .nav-tabs a {
   margin: 0 1em;
