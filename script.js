@@ -42,7 +42,7 @@ function createLightningFlash() {
   flash.style.left = 0;
   flash.style.width = "100%";
   flash.style.height = "100%";
-  flash.style.backgroundColor = "rgba(255, 255, 255, 0.6)"; // 透明度調整可
+  flash.style.backgroundColor = "rgba(255, 255, 255, 0.2)"; // 透明度調整可
   flash.style.zIndex = 99999;
   flash.style.pointerEvents = "none";
   flash.style.animation = "flash 0.2s ease-in-out";
@@ -54,7 +54,7 @@ function createLightningFlash() {
 // ランダムな間隔で雷を発生させる
 function startThunderstorm() {
   setInterval(() => {
-    if (Math.random() < 0.25) { // ← 約25％の確率で雷が発生
+    if (Math.random() < 0.15) { // ← 約25％の確率で雷が発生
       createLightningFlash();
     }
   }, 2000); // 2秒ごとにチェック
