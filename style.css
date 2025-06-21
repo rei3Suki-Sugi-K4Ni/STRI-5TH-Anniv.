@@ -127,7 +127,7 @@ footer {
 .nav-tabs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px; /* レンガのつなぎ目感 */
+  gap: 0.2px; /* レンガのつなぎ目感 */
   width: 90%;
   max-width: 500px;
   margin: 0.2em auto;
@@ -141,13 +141,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.6em;
+  padding: 0.3em;
   background-color: #1c1227;
   color: #ffb6c1;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.7rem;
- /* border: 1px solid #eaaac0;  繋ぎ目のなじませ枠線 */
 }
 
 .nav-tabs-grid a:hover {
