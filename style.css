@@ -124,21 +124,44 @@ footer {
 }
 
 /* ナビゲーションタブ */
-.nav-tabs {
+.nav-tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px; /* レンガのつなぎ目感 */
+  width: 90%;
+  max-width: 500px;
+  margin: 1em auto;
+  background-color: #ffb6c1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-tabs-grid a,
+.nav-tabs-grid .empty-tab {
   display: flex;
   justify-content: center;
-  background-color: #333;
-  padding: 0.5em 0;
-  flex-wrap: wrap;
-}
-.nav-tabs a {
-  margin: 0 1em;
+  align-items: center;
+  padding: 0.6em;
+  background-color: #1c1227;
   color: #ffb6c1;
   text-decoration: none;
   font-weight: bold;
+  font-size: 0.9rem;
+  border: 1px solid #eaaac0; /* 繋ぎ目のなじませ枠線 */
 }
-.nav-tabs a:hover {
-  text-decoration: underline;
+
+.nav-tabs-grid a:hover {
+  background-color: #2b1a36;
+}
+
+.nav-tabs-grid a.active {
+  background-color: #ffb6c1;
+  color: #1c1227;
+}
+
+.nav-tabs-grid .empty-tab {
+  background-color: transparent;
+  border: none;
 }
 
 /* プロフィール表 */
