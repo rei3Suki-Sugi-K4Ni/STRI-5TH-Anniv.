@@ -130,7 +130,7 @@ footer {
   gap: 1px; /* レンガのつなぎ目感 */
   width: 90%;
   max-width: 500px;
-  margin: 1em auto;
+  margin: 0.2em auto;
   background-color: #ffb6c1;
   border-radius: 0px;
   overflow: hidden;
