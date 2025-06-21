@@ -132,7 +132,7 @@ footer {
   max-width: 500px;
   margin: 0.2em auto;
   background-color: #ffb6c1;
-  border-radius: 1px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
