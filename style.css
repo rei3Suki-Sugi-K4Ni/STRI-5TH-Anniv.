@@ -194,10 +194,10 @@ footer {
 }
 /* 表の中に挿入する画像 */
 .table-image {
-  width: 100%;
+  width: 50%;
   height: auto;
-  max-width: 100%;
-  border-radius: 8px;
+  max-width: 50%;
+  border-radius: 0px;
   display: block;
   margin: 0 auto;
 }
