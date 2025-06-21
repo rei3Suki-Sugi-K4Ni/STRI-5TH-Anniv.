@@ -146,8 +146,8 @@ footer {
   color: #ffb6c1;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9rem;
-  border: 1px solid #eaaac0; /* 繋ぎ目のなじませ枠線 */
+  font-size: 0.7rem;
+ /* border: 1px solid #eaaac0;  繋ぎ目のなじませ枠線 */
 }
 
 .nav-tabs-grid a:hover {
