@@ -101,6 +101,7 @@ footer {
     transform: translateY(100vh);
   }
 }
+/* 夜空エフェクト */
 .stars {
   position: fixed;
   top: 0; left: 0;
@@ -121,6 +122,12 @@ footer {
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
+}
+/* 雷エフェクト */
+@keyframes flash {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* ナビゲーションタブ */
