@@ -75,7 +75,7 @@ footer {
 @media screen and (max-width: 600px) {
 .note {
   color: #848383;
-  font-size: 0.55rem;
+  font-size: 0.45rem;
 }
 @media screen and (max-width: 600px) {
   .profile-table,
