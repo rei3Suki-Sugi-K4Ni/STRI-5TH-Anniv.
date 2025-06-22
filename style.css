@@ -147,6 +147,7 @@ footer {
   width: 100%;
   font-family: "しねきゃぷしょん", sans-serif;
   transition: background 0.3s;
+  box-sizing: border-box; /* ← これあるとスマホで崩れにくい！ */
 }
 
 .menu-button:hover {
@@ -154,11 +155,12 @@ footer {
 }
 
 .menu-icon {
-  width: 40px; /* ペンギン画像：小さめ */
+  width: 40px;         /* 基本サイズ */
   height: auto;
+  max-width: 15%;      /* スマホでも巨大化しないよう制限！ */
+  min-width: 30px;     /* 小さすぎないように最低サイズも指定（お好みで） */
   margin-right: 1em;
 }
-
 .menu-texts {
   display: flex;
   flex-direction: column;
