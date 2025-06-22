@@ -73,3 +73,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// トップへ戻るボタンの表示切り替えと動作
+document.addEventListener("DOMContentLoaded", function () {
+  const topBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  });
+
+  topBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
