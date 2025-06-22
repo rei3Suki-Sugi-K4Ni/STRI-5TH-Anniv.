@@ -304,7 +304,7 @@ footer {
 .envelope .sender {
   position: absolute;
   right: 0.5em;
-  bottom: 2.0m;
+  bottom: 1.0m;
   font-size: 0.6rem; /* 小さめに調整 */
   font-family: "MS 明朝", serif;
   background-color: rgba(255, 255, 255, 0.6); /* 読みにくいときはコメントアウトしてもOK */
@@ -326,7 +326,7 @@ footer {
   }
 
   .envelope .sender {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     bottom: 0.6em;
     right: 0.6em;
   }
