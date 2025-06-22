@@ -291,7 +291,7 @@ footer {
   background-size: cover;
   background-position: center;
   font-family: "MS 明朝", serif;
-  font-size: 0.9rem;
+  font-size: 0.5rem;
   color: #333;
   padding: 0.4em;
   box-sizing: border-box;
@@ -304,8 +304,8 @@ footer {
 .envelope .sender {
   position: absolute;
   right: 0.5em;
-  bottom: 3.5em;
-  font-size: 0.9rem; /* 小さめに調整 */
+  bottom: 2.0m;
+  font-size: 0.6rem; /* 小さめに調整 */
   font-family: "MS 明朝", serif;
   background-color: rgba(255, 255, 255, 0.6); /* 読みにくいときはコメントアウトしてもOK */
   padding: 0 0.3em;
