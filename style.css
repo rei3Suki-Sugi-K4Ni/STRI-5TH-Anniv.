@@ -283,8 +283,9 @@ footer {
 }
 
 .envelope {
-  width: 45%;
+  width: 35%;
   max-width: 180px;
+  min-width: 140px; /* これ以下には縮まないようにする */
   aspect-ratio: 4 / 3;
   background-image: url('assets/airmail_y.jpg');
   background-size: cover;
