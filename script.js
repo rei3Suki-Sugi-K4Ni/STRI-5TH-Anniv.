@@ -90,3 +90,19 @@ document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
+
+// スマホ版を表示したときに画面をちょい下にスクロール
+mobileBtn.addEventListener('click', () => {
+  mobileBtn.classList.add('active');
+  pcBtn.classList.remove('active');
+  mobileGame.classList.add('active');
+  pcGame.classList.remove('active');
+
+  if (!mobileGame.src) {
+    mobileGame.src = "https://rei3sukisugikani.github.io/setarei-5th-typing-mobile/";
+  }
+
+  setTimeout(() => {
+    window.scrollBy(0, 100); // 必要なら数値調整！
+  }, 200);
+});
