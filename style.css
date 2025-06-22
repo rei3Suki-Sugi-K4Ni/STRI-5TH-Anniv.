@@ -303,13 +303,15 @@ footer {
 /* 封筒の差出人表示位置（右下寄せ） */
 .envelope .sender {
   position: absolute;
-  right: 0.5em;
-  bottom: 1.0m;
-  font-size: 0.6rem; /* 小さめに調整 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* ←中央にピッタリ寄せる魔法！ */
+  font-size: 0.6rem;
   font-family: "MS 明朝", serif;
-  background-color: rgba(255, 255, 255, 0.6); /* 読みにくいときはコメントアウトしてもOK */
+  background-color: rgba(255, 255, 255, 0.6); /* 読みにくさ防止の白背景 */
   padding: 0 0.3em;
   border-radius: 3px;
+  text-align: center;
 }
 
 /* ▼PC表示用（画面が広いとき） */
