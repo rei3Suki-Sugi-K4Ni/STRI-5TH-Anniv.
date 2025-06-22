@@ -38,6 +38,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <img src="assets/header1.PNG" alt="ヘッダー画像" class="logo" /> 
@@ -49,26 +50,24 @@
     <a href="messages.html">メッセージ</a>
     <a href="game.html" class="active">ゲーム</a>
     <a href="survey.html">アンケート</a>
-    <span class="empty-tab"></span> <!-- 右下の空白 -->
+    <span class="empty-tab"></span>
   </nav>
 
   <main>
-    <h2 style="text-align: center;">タイピングゲーム</h2>
+    <h2 style="text-align: center;">ゲーム</h2>
     <div class="game-selector">
       <button id="pcBtn" class="active">PC版</button>
       <button id="mobileBtn">スマホ版</button>
     </div>
-    <div style="text-align: center; margin: 0.3em 0;">    <!-- 中断ボタン -->
-    <button id="resetBtn" onclick="location.reload()" class="reset-button hidden">中断する</button>
+    <div style="text-align: center; margin: 0.3em 0;">
+      <button id="resetBtn" onclick="location.reload()" class="reset-button hidden">中断する</button>
     </div>
-  <!-- ▼ここから倍率調整を加えたゲーム表示部 -->
-  <div class="game-frame-wrapper">
+    <div class="game-frame-wrapper">
     <div class="game-frame-scaler">
-<!-- 最初は src を持たせず、クリック時に設定する -->
-<iframe id="pcGame" class="game-frame" title="PC版ゲーム"></iframe>
-<iframe id="mobileGame" class="game-frame" title="スマホ版ゲーム"></iframe>
+      <iframe id="pcGame" class="game-frame" title="PC版ゲーム"></iframe>
+      <iframe id="mobileGame" class="game-frame" title="スマホ版ゲーム"></iframe>
     </div>
-  </div>
+    </div>
   
   </main>
 
@@ -77,42 +76,37 @@
   </footer>
 
   <script>
-const pcBtn = document.getElementById('pcBtn');
-const mobileBtn = document.getElementById('mobileBtn');
-const pcGame = document.getElementById('pcGame');
-const mobileGame = document.getElementById('mobileGame');
-const resetBtn = document.getElementById('resetBtn');
+    const pcBtn = document.getElementById('pcBtn');
+    const mobileBtn = document.getElementById('mobileBtn');
+    const pcGame = document.getElementById('pcGame');
+    const mobileGame = document.getElementById('mobileGame');
+    const resetBtn = document.getElementById('resetBtn');
 
-pcBtn.addEventListener('click', () => {
-  pcBtn.classList.add('active');
-  mobileBtn.classList.remove('active');
-  pcGame.classList.add('active');
-  mobileGame.classList.remove('active');
+    pcBtn.addEventListener('click', () => {
+      pcBtn.classList.add('active');
+      mobileBtn.classList.remove('active');
+      pcGame.classList.add('active');
+      mobileGame.classList.remove('active');
+      if (!pcGame.src) {
+        pcGame.src = "https://rei3sukisugikani.github.io/setarei_5th_typing/";
+      }
+    });
 
-  // srcが未設定なら設定
-  if (!pcGame.src) {
-    pcGame.src = "https://rei3sukisugikani.github.io/setarei_5th_typing/";
-  }
-});
+    mobileBtn.addEventListener('click', () => {
+      mobileBtn.classList.add('active');
+      pcBtn.classList.remove('active');
+      mobileGame.classList.add('active');
+      pcGame.classList.remove('active');
+      if (!mobileGame.src) {
+        mobileGame.src = "https://rei3sukisugikani.github.io/setarei-5th-typing-mobile/";
+      }
+    });
 
-mobileBtn.addEventListener('click', () => {
-  mobileBtn.classList.add('active');
-  pcBtn.classList.remove('active');
-  mobileGame.classList.add('active');
-  pcGame.classList.remove('active');
-
-  if (!mobileGame.src) {
-    mobileGame.src = "https://rei3sukisugikani.github.io/setarei-5th-typing-mobile/";
-  }
-});
-
-// ゲーム読み込み時に中断ボタンを表示
-[pcGame, mobileGame].forEach(frame => {
-  frame.addEventListener('load', () => {
-    resetBtn.classList.remove('hidden');
-  });
-});
-
+    [pcGame, mobileGame].forEach(frame => {
+      frame.addEventListener('load', () => {
+      resetBtn.classList.remove('hidden');
+      });
+    });
   </script>
 </body>
 </html>
