@@ -92,6 +92,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // スマホ版を表示したときに画面をちょい下にスクロール
+pcBtn.addEventListener('click', () => {
+  pcBtn.classList.add('active');
+  mobileBtn.classList.remove('active');
+  pcGame.classList.add('active');
+  mobileGame.classList.remove('active');
+
+  if (!pcGame.src) {
+    pcGame.src = "https://rei3sukisugikani.github.io/setarei_5th_typing/";
+  }
+
+  setTimeout(() => {
+    window.scrollBy(0, 100); // 必要に応じて微調整OK（80〜150くらい）
+  }, 200);
+});
+
 mobileBtn.addEventListener('click', () => {
   mobileBtn.classList.add('active');
   pcBtn.classList.remove('active');
