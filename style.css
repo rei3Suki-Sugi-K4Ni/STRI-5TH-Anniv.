@@ -163,8 +163,8 @@ footer {
   flex-direction: column;
 }
 .menu-en {
-  font-size: 0.8em;
-  opacity: 0.7;
+  font-size: 1em;
+  opacity: 1;
   line-height: 1;
 }
 .menu-ja {
