@@ -16,7 +16,6 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-/* ▼ PCなど画面が広いときだけ上書きする */
 @media (min-width: 768px) {
   body {
     font-size: 16px;
@@ -164,7 +163,7 @@ footer {
   flex-direction: column;
 }
 .menu-en {
-  font-size: 0.6em;
+  font-size: 0.8em;
   opacity: 0.7;
   line-height: 1;
 }
