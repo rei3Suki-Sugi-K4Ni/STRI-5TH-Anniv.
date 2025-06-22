@@ -1,6 +1,5 @@
-// ページが読み込まれた後に雨エフェクトを追加
+// rain
 document.addEventListener("DOMContentLoaded", function () {
-  // game.html だけは雨を除外する
   if (window.location.pathname.includes("game.html")) return;
 
   const rainContainer = document.createElement("div");
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.body.appendChild(rainContainer);
 });
-
+// star
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("game.html")) return;
 
@@ -35,7 +34,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// 手紙のポップアップ表示処理
+// backToTop
+document.addEventListener("DOMContentLoaded", function () {
+  const topBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      topBtn.style.display = "block";
+    } else {
+      topBtn.style.display = "none";
+    }
+  });
+
+  topBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// letter popup
 document.addEventListener("DOMContentLoaded", function () {
   const envelopes = document.querySelectorAll(".envelope");
 
@@ -53,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <span class="sender">― ${sender}</span>
       `;
 
-      // 手紙の外側をクリックで閉じる
       const overlay = document.createElement("div");
       overlay.style.position = "fixed";
       overlay.style.top = "0";
@@ -74,24 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// トップへ戻るボタンの表示切り替えと動作
-document.addEventListener("DOMContentLoaded", function () {
-  const topBtn = document.getElementById("backToTop");
-
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      topBtn.style.display = "block";
-    } else {
-      topBtn.style.display = "none";
-    }
-  });
-
-  topBtn.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-});
-
-// スマホ版を表示したときに画面をちょい下にスクロール
+// gamePage Scroll
 pcBtn.addEventListener('click', () => {
   pcBtn.classList.add('active');
   mobileBtn.classList.remove('active');
@@ -103,7 +101,7 @@ pcBtn.addEventListener('click', () => {
   }
 
   setTimeout(() => {
-    window.scrollBy(0, 100); // 必要に応じて微調整OK（80〜150くらい）
+    window.scrollBy(0, 100);
   }, 200);
 });
 
@@ -118,6 +116,6 @@ mobileBtn.addEventListener('click', () => {
   }
 
   setTimeout(() => {
-    window.scrollBy(0, 100); // 必要なら数値調整！
+    window.scrollBy(0, 100);
   }, 200);
 });
