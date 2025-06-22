@@ -273,7 +273,7 @@ footer {
   margin: 0 auto;
 }
 
-/* メッセージ封筒 */
+/* ▼メッセージ封筒（スマホ優先） */
 .envelopes-container {
   display: flex;
   flex-wrap: wrap;
@@ -285,7 +285,7 @@ footer {
 .envelope {
   width: 40%;
   max-width: 180px;
-  min-width: 140px; /* これ以下には縮まないようにする */
+  min-width: 140px;
   aspect-ratio: 4 / 3;
   background-image: url('assets/airmail_y.jpg');
   background-size: cover;
@@ -299,16 +299,36 @@ footer {
   position: relative;
   text-align: right;
 }
+
+/* 封筒の差出人表示位置（右下寄せ） */
+.envelope .sender {
+  position: absolute;
+  right: 0.5em;
+  bottom: 0.4em;
+  font-size: 0.45rem; /* 小さめに調整 */
+  font-family: "MS 明朝", serif;
+  background-color: rgba(255, 255, 255, 0.6); /* 読みにくいときはコメントアウトしてもOK */
+  padding: 0 0.3em;
+  border-radius: 3px;
+}
+
+/* ▼PC表示用（画面が広いとき） */
 @media screen and (min-width: 600px) {
   .envelope {
     width: 200px;
-    font-size: 1.1rem;
+    font-size: 0.6rem;
     padding: 0.6em;
   }
 
   .envelopes-container {
     gap: 1em;
     padding: 2em;
+  }
+
+  .envelope .sender {
+    font-size: 0.55rem;
+    bottom: 0.6em;
+    right: 0.6em;
   }
 }
 /* 手紙ポップアップ */
