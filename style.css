@@ -162,8 +162,8 @@ footer {
 }
 
 .nav-tabs-grid .empty-tab {
-  background-color: transparent;
-  border: none;
+  background-color: #575656;
+  border: 0.1px solid #eaaac0;
 }
 
 /* プロフィール表 */
