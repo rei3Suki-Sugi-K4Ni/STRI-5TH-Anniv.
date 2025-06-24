@@ -51,6 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// emojiOnly
+document.addEventListener("DOMContentLoaded", function () {
+  const senders = document.querySelectorAll(".envelope .sender");
+
+  senders.forEach(sender => {
+    const text = sender.textContent.trim();
+
+    const isEmojiOnly = /^[\p{Emoji}\p{Symbol}\p{Punctuation}]{1,2}$/u.test(text);
+
+    if (isEmojiOnly) {
+      sender.classList.add("emoji-only");
+    }
+  });
+});
+
 // letter popup
 document.addEventListener("DOMContentLoaded", function () {
   const envelopes = document.querySelectorAll(".envelope");
