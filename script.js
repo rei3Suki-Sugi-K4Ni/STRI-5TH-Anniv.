@@ -116,6 +116,6 @@ mobileBtn.addEventListener('click', () => {
   }
 
   setTimeout(() => {
-    window.scrollBy(0, 130);
+    window.scrollBy(0, 150);
   }, 200);
 });
