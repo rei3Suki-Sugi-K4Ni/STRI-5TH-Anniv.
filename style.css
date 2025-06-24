@@ -296,7 +296,7 @@ footer {
   text-align: center;
 }
 .envelope .sender.emoji-only {
-  font-size: 1.2rem; 
+  font-size: 0.9rem; 
 }
 @media screen and (min-width: 600px) {
   .envelope {
