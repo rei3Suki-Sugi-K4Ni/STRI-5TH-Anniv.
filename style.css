@@ -276,7 +276,6 @@ footer {
   background-image: url('assets/airmail_y.jpg');
   background-size: cover;
   background-position: center;
-  font-family: "MS 明朝", serif;
   font-size: 0.5rem;
   color: #333;
   padding: 0.4em;
@@ -290,7 +289,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 0 0.3em;
   border-radius: 3px;
