@@ -270,7 +270,7 @@ footer {
 }
 .envelope {
   width: 40%;
-  max-width: 180px;
+  max-width: 160px;
   min-width: 140px;
   aspect-ratio: 4 / 3;
   background-image: url('assets/airmail_y.jpg');
