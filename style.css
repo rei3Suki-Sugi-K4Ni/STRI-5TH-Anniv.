@@ -289,11 +289,14 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.0rem;
+  font-size: 0.6rem;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 0 0.3em;
   border-radius: 3px;
   text-align: center;
+}
+.envelope .sender.emoji-only {
+  font-size: 1.2rem; 
 }
 @media screen and (min-width: 600px) {
   .envelope {
@@ -306,7 +309,7 @@ footer {
     padding: 2em;
   }
   .envelope .sender {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     bottom: 0.6em;
     right: 0.6em;
   }
