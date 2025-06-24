@@ -290,8 +290,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 0.6rem;
-  font-family: "MS 明朝", serif;
+  font-size: 1.2rem;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 0 0.3em;
   border-radius: 3px;
@@ -308,7 +307,7 @@ footer {
     padding: 2em;
   }
   .envelope .sender {
-    font-size: 1rem;
+    font-size: 1.2rem;
     bottom: 0.6em;
     right: 0.6em;
   }
