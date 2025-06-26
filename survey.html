@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>アンケート結果｜世田れい5周年ファンサイト</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>アンケート｜世田れい5周年ファンサイト</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <img src="assets/header1.PNG" alt="ヘッダー画像" class="logo" /> 
+    <img src="assets/header1.PNG" alt="ヘッダー画像" class="logo" />
   </header>
 
   <nav class="nav-tabs-grid">
@@ -23,41 +22,54 @@
   </nav>
 
   <main>
-    <h2 style="text-align: center;">アンケート結果</h2>
+    <h2 style="text-align: center;">アンケート</h2>
 
     <section class="result-section">
-      <h3 class="question-title">Q1. れいさんはいい人？</h3>
-      <img src="assets/test1.png" alt="Q1グラフ">
-
-      <h3 class="question-title">Q2. かわいい？かっこいい？</h3>
-      <img src="assets/test2.png" alt="Q2グラフ">
-
-      <h3 class="question-title">Q3. 会いたい？</h3>
-      <img src="assets/test3.png" alt="Q3グラフ">
-
-      <h3 class="question-title">Q4. どんなお友達？</h3>
-      <img src="assets/test1.png" alt="Q4グラフ">
-
-      <h3 class="question-title">Q5. 流れで？</h3>
-      <img src="assets/test2.png" alt="Q5グラフ">
-
-      <h3 class="question-title">Q6. オススメするなら？</h3>
-      <div class="q6-container">
-        <img src="assets/yururei.jpg" alt="紹介イメージ">
-        <div class="q6-comments">
-          <div class="q6-bubble">声が好きな人に！</div>
-          <div class="q6-bubble">優しさに癒されたい人へ！</div>
-          <div class="q6-bubble">感性が独特で面白い人に！</div>
+      <div class="chart-row">
+        <div class="chart-block">
+          <p class="question-title">Q1.「いい人」だと思う？</p>
+          <img src="assets/test1.png" alt="Q1グラフ" />
+        </div>
+        <div class="chart-block">
+          <p class="question-title">Q2. かわいい？かっこいい？</p>
+          <img src="assets/test2.png" alt="Q2グラフ" />
         </div>
       </div>
 
-      <h3 class="question-title">Q7. ステータス平均値</h3>
-      <img src="assets/chart.png" alt="スパイダーグラフ" class="spider-chart">
-
-      <button class="accordion">項目ごとの分布を見る</button>
-      <div class="panel">
-        <img src="assets/test1.png" alt="個別評価グラフ">
+      <div class="chart-row">
+        <div class="chart-block">
+          <p class="question-title">Q3. 会ってみたい？</p>
+          <img src="assets/test3.png" alt="Q3グラフ" />
+        </div>
+        <div class="chart-block">
+          <p class="question-title">Q4. どんなお友達になりたい？</p>
+          <img src="assets/test1.png" alt="Q4グラフ" />
+        </div>
       </div>
+
+      <div class="chart-row">
+        <div class="chart-block">
+          <p class="question-title">Q5. 流れでするなら？</p>
+          <img src="assets/test2.png" alt="Q5グラフ" />
+        </div>
+        <div class="chart-block">
+          <p class="question-title">Q6. 仮設？</p>
+          <img src="assets/test3.png" alt="Q6グラフ" />
+        </div>
+      </div>      
+      <br>
+      <h3 class="question-title">Q7. れいさんをおすすめしてください！</h3>
+      <div class="q7-flex-wrap">
+        <img src="assets/yuruitya.jpg" alt="ゆるれい" class="q7-img" />
+        <div class="q7-comment-box">
+          <span class="q7-bubble">面白くてかわいい！</span>
+          <span class="q7-bubble">話してて飽きない</span>
+          <span class="q7-bubble">ギャップがいい！</span>
+          <span class="q7-bubble">どんな話題でも返してくれる！</span>
+          <span class="q7-bubble">元気をくれる存在！</span>
+          <div class="q7-bubble">ちょっとえっちなのも好き。</div>          
+        </div>
+      </div>      
     </section>
   </main>
 
