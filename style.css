@@ -451,7 +451,7 @@ iframe.game-frame {
   min-width: 280px;
 }
 .chart-block img {
-  width: 100%;
+  width: 90%;
   height: auto;
   border-radius: 8px;
 }
