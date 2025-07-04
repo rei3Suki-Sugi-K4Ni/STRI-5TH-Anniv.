@@ -33,6 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
     starContainer.appendChild(star);
   }
 });
+// accordion-button
+const buttons = document.querySelectorAll(".accordion-button");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const content = btn.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
 
 // backToTop
 document.addEventListener("DOMContentLoaded", function () {
