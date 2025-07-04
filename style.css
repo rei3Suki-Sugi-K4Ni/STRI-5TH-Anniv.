@@ -260,6 +260,22 @@ footer {
   display: block;
   margin: 0 auto;
 }
+.profile-section {
+  max-width: 850px;
+  margin: 2em auto;
+  line-height: 1.8;
+}
+.profile-section h3 {
+  margin-top: 1.5em;
+  border-bottom: 1px solid #ffb6c1;
+  padding-bottom: 0.3em;
+  font-size: 1.2em;
+}
+.profile-section .sub-heading {
+  font-weight: bold;
+  margin-top: 1em;
+  color: #ffb6c1;
+}
 
 .accordion {
   margin-top: 1em;
@@ -487,9 +503,9 @@ iframe.game-frame {
   min-width: 280px;
 }
 .chart-block img {
-  width: 90%;
+  width: 96%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 .question-title {
   font-family: "しねきゃぷしょん", sans-serif;
@@ -534,5 +550,66 @@ iframe.game-frame {
   .q7-comment-box {
     justify-content: center;
     max-width: 100%;
+  }
+}
+.q6-legend {
+  margin-top: 1em;
+  font-size: 0.85em;
+  line-height: 1.5;
+}
+.q6-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.q6-legend li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3em;
+  flex-wrap: wrap;
+}
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 600px) {
+  .q6-legend {
+    font-size: 0.78em;
+  }
+  .q6-legend li {
+    margin-bottom: 0.4em;
+  }
+}
+.q6-pc-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5em;
+}
+
+/* PCでのみ表示する凡例 */
+.pc-only {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .pc-only {
+    display: block;
+    max-width: 500px;
+    font-size: 0.7em;
+    line-height: 1.5;
+  }
+}
+
+/* 📱スマホだけ表示 */
+.mobile-only {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
   }
 }
