@@ -551,6 +551,10 @@ iframe.game-frame {
     max-width: 100%;
   }
 }
+.q7-gap {
+  width: 100%;
+  height: 0.5em; /* 行間の広さはここで調整 */
+}
 .q6-legend {
   margin-top: 1em;
   font-size: 0.85em;
