@@ -526,7 +526,7 @@ iframe.game-frame {
 .q7-comment-box {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3em;
+  gap: 0.2em;
   max-width: calc(100% - 140px);
 }
 .q7-bubble {
@@ -534,7 +534,7 @@ iframe.game-frame {
   color: #222;
   font-family: 'やさしさゴシック', sans-serif;
   font-size: 0.85em;
-  padding: 0.3em 0.6em;
+  padding: 0.4em 0.8em;
   border-radius: 15px;
   max-width: 100%;
   word-break: break-word;
