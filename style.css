@@ -518,8 +518,8 @@ iframe.game-frame {
   gap: 1em;
 }
 .q7-img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
