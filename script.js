@@ -115,6 +115,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // gamePage Scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const pcBtn = document.getElementById("pcBtn");
+  const mobileBtn = document.getElementById("mobileBtn");
+  const pcGame = document.getElementById("pcGame");
+  const mobileGame = document.getElementById("mobileGame");
+
+  if (pcBtn && mobileBtn && pcGame && mobileGame) {
 pcBtn.addEventListener('click', () => {
   pcBtn.classList.add('active');
   mobileBtn.classList.remove('active');
@@ -143,4 +150,106 @@ mobileBtn.addEventListener('click', () => {
   setTimeout(() => {
     window.scrollBy(0, 180);
   }, 200);
+  });
+  }
+});
+
+
+// ✅ script.js（完成版・voiceData.jsに対応）
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  const voiceList = document.getElementById("voiceList");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  let currentCategory = "all";
+  let currentKeyword = "";
+
+  function createVoiceEntry(item) {
+    const entry = document.createElement("div");
+    entry.className = "voice-entry";
+    entry.style.width = "100%";
+    entry.style.boxSizing = "border-box";
+    entry.style.color = "#333";
+    const header = document.createElement("div");
+    header.className = "voice-header";
+    header.style.display = "flex";
+    header.style.alignItems = "center";
+    header.style.justifyContent = "space-between";
+    // タイトルリンク（省略対応）
+    const titleLink = document.createElement("a");
+    titleLink.href = item.url;
+    titleLink.target = "_blank";
+    titleLink.style.textDecoration = "none";
+    titleLink.style.color = "inherit";
+    titleLink.style.flex = "1";
+    titleLink.style.overflow = "hidden";
+    titleLink.style.textOverflow = "ellipsis";
+    titleLink.style.whiteSpace = "nowrap";
+    titleLink.textContent = item.title || '(タイトルなし)';
+    // 展開ボタン
+    const caret = document.createElement("span");
+    caret.className = "caret";
+    caret.textContent = "^";
+    // 組み立て
+    header.appendChild(titleLink);
+    header.appendChild(caret);
+    const detail = document.createElement("div");
+    detail.className = "voice-detail";
+    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：${item.title || '(タイトルなし)'}</div><div>${item.text}</div>`;
+    detail.style.display = "none";
+
+    // 折りたたみ処理（リンクじゃなくcaretで展開）
+    caret.style.cursor = "pointer";
+    caret.addEventListener("click", (e) => {
+      e.stopPropagation(); // クリック伝播防止
+      const isOpen = detail.style.display === "block";
+      detail.style.display = isOpen ? "none" : "block";
+    });
+
+    entry.appendChild(header);
+    entry.appendChild(detail);
+    return entry;
+  }
+
+  function renderList(data) {
+    voiceList.innerHTML = "";
+    data.forEach(item => {
+      voiceList.appendChild(createVoiceEntry(item));
+    });
+  }
+
+  function filterAndSearch() {
+    let filtered = voiceData;
+    if (currentCategory !== "all") {
+      filtered = filtered.filter(item => item.category === currentCategory);
+    }
+    if (currentKeyword.trim()) {
+      const keyword = currentKeyword.toLowerCase();
+      filtered = filtered.filter(item =>
+        item.text.toLowerCase().includes(keyword) ||
+        item.kana.toLowerCase().includes(keyword)
+      );
+    }
+    renderList(filtered);
+  }
+
+  // カテゴリボタン
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentCategory = btn.dataset.category;
+      filterAndSearch();
+    });
+  });
+
+  // 検索バー
+  searchInput.addEventListener("input", e => {
+    currentKeyword = e.target.value;
+    filterAndSearch();
+  });
+
+  // 初期表示
+  renderList(voiceData);
 });
