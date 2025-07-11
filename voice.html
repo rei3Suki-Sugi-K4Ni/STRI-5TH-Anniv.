@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ショートボイス｜世田れい5周年ファンサイト</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="voiceData.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="rain-container"></div>
+  <header>
+    <img src="assets/header1.PNG" alt="ヘッダー画像" class="logo" />
+  </header>
+
+  <nav class="nav-tabs-grid">
+    <a href="index.html">トップ</a>
+    <a href="profile.html">プロフィール</a>
+    <a href="messages.html">メッセージ</a>
+    <a href="survey.html">アンケート</a>
+    <a href="game.html">ゲーム</a>
+    <a href="voice.html" class="active">ショートボイス</a>
+  </nav>
+
+  <main>
+    <h2 style="text-align: center;">ショートボイス</h2>
+    <div class="filter-bar">
+      <div class="category-buttons">
+        <button class="filter-btn active" data-category="all">すべて</button>
+        <button class="filter-btn" data-category="シチュボ">シチュボ</button>
+        <button class="filter-btn" data-category="ゆるボ">ゆるボ</button>
+      </div>
+      <input type="text" id="searchInput" placeholder="セリフ・キーワードを検索" />
+    </div>
+    <div id="voiceList" class="voice-list"></div>
+  </main>
+
+  <button id="backToTop" class="back-to-top" title="トップに戻る">▲</button>
+
+  <footer>
+    <p>&copy; 2025 rei3daisukiclub🦀</p>
+  </footer>
+</body>
+</html>
