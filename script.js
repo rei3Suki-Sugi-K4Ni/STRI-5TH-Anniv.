@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     header.appendChild(caret);
     const detail = document.createElement("div");
     detail.className = "voice-detail";
-    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：${item.title || '(タイトルなし)'}</div><div>${item.text}</div>`;
+    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${item.title || '(タイトルなし)'}</strong></div><div>${item.text}</div>`;
     detail.style.display = "none";
 
     // 折りたたみ処理（リンクじゃなくcaretで展開）
