@@ -702,10 +702,13 @@ iframe.game-frame {
 @media screen and (max-width: 480px) {
   #filterArea {
     flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   #searchInput {
     width: 100px;
+    max-width: none;
     font-size: 0.9em;
   }
 
@@ -717,3 +720,8 @@ iframe.game-frame {
     font-size: 0.9em;
   }
 }
+/* スマホでキーボード表示時の拡大防止 */
+input[type="text"] {
+  font-size: 16px;
+}
+
