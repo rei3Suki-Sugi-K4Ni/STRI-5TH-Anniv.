@@ -703,7 +703,7 @@ iframe.game-frame {
   }
   .voice-header {
     font-size: 1em;
-    min-height: 2.2em; /* これで高さ統一 */
+    min-height: 2em; /* これで高さ統一 */
   }
   .voice-detail {
     font-size: 0.9em;
