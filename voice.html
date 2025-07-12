@@ -25,13 +25,13 @@
 
   <main>
     <h2 style="text-align: center;">ショートボイス</h2>
-    <div class="filter-bar">
-      <div class="category-buttons">
+    <div id="filterArea">
+      <div id="filterButtons">
         <button class="filter-btn active" data-category="all">すべて</button>
         <button class="filter-btn" data-category="シチュボ">シチュボ</button>
         <button class="filter-btn" data-category="ゆるボ">ゆるボ</button>
       </div>
-      <input type="text" id="searchInput" placeholder="セリフ・キーワードを検索" />
+      <input type="text" id="searchInput" placeholder="キーワード検索" />
     </div>
     <div id="voiceList" class="voice-list"></div>
   </main>
