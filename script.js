@@ -220,20 +220,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function filterAndSearch() {
-    let filtered = voiceData;
-    if (currentCategory !== "all") {
-      filtered = filtered.filter(item => item.category === currentCategory);
-    }
-    if (currentKeyword.trim()) {
-      const keyword = currentKeyword.toLowerCase();
-      filtered = filtered.filter(item =>
-     (item.text || "").toLowerCase().includes(keyword) ||
-     (item.kana || "").toLowerCase().includes(keyword)
-    );
-    }
-    renderList(filtered);
+function filterAndSearch() {
+  let filtered = voiceData;
+
+  if (currentCategory !== "all") {
+    filtered = filtered.filter(item => item.category === currentCategory);
   }
+
+  if (currentKeyword.trim()) {
+    const keyword = currentKeyword.toLowerCase();
+    filtered = filtered.filter(item =>
+      (item.text || "").toLowerCase().includes(keyword) ||
+      (item.kana || "").toLowerCase().includes(keyword)
+    );
+  }
+
+  renderList(filtered);
+}
 
   // カテゴリボタン
   filterButtons.forEach(btn => {
