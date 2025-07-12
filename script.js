@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 展開ボタン
     const caret = document.createElement("span");
     caret.className = "caret";
-    caret.textContent = "^";
+    caret.textContent = "v";
     // 組み立て
     header.appendChild(titleLink);
     header.appendChild(caret);
@@ -205,6 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation(); // クリック伝播防止
       const isOpen = detail.style.display === "block";
       detail.style.display = isOpen ? "none" : "block";
+      caret.textContent = isOpen ? "v" : "^";
     });
 
     entry.appendChild(header);
