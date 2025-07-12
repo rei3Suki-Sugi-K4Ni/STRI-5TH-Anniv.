@@ -228,9 +228,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentKeyword.trim()) {
       const keyword = currentKeyword.toLowerCase();
       filtered = filtered.filter(item =>
-        item.text.toLowerCase().includes(keyword) ||
-        item.kana.toLowerCase().includes(keyword)
-      );
+     (item.text || "").toLowerCase().includes(keyword) ||
+     (item.kana || "").toLowerCase().includes(keyword)
     }
     renderList(filtered);
   }
