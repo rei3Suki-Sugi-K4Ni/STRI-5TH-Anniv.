@@ -642,8 +642,11 @@ iframe.game-frame {
   text-overflow: ellipsis;
 }
 .voice-header .caret {
+  font-size: 1.5em; /* ← 文字サイズを大きく */
+  padding: 0.3em 0.6em; /* ← 押せる領域を広げる（上下・左右） */
   margin-left: 1em;
   font-weight: normal;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 .voice-detail {
