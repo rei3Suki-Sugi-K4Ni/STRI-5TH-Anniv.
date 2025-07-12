@@ -230,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       filtered = filtered.filter(item =>
      (item.text || "").toLowerCase().includes(keyword) ||
      (item.kana || "").toLowerCase().includes(keyword)
+    );
     }
     renderList(filtered);
   }
