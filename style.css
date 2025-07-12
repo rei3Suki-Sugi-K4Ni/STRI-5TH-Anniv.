@@ -630,7 +630,6 @@ iframe.game-frame {
   box-sizing: border-box;
   color: #333;
 }
-
 .voice-header {
   display: flex;
   justify-content: space-between;
@@ -642,19 +641,16 @@ iframe.game-frame {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .voice-header .caret {
   margin-left: 1em;
   font-weight: normal;
   transition: transform 0.3s ease;
 }
-
 .voice-detail {
   font-size: 0.95em;
   display: none;
   margin-top: 0.5em;
 }
-
 /* フィルタボタン */
 .filter-btn {
   padding: 0.3em 0.8em;
@@ -665,13 +661,11 @@ iframe.game-frame {
   border-radius: 5px;
   cursor: pointer;
 }
-
 .filter-btn.active {
   background-color: #ffb6c1;
   border-color: #ffb6c1;
   color: #fff;
 }
-
 /* カテゴリ＋検索 横並び */
 #filterArea {
   display: flex;
@@ -681,13 +675,11 @@ iframe.game-frame {
   gap: 0.5em;
   margin-bottom: 1em;
 }
-
 #filterButtons {
   display: flex;
   flex-wrap: nowrap;
   flex-shrink: 0;
 }
-
 #searchInput {
   flex-shrink: 0;
   width: 120px;
@@ -697,7 +689,6 @@ iframe.game-frame {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
 /* スマホ対応 */
 @media screen and (max-width: 480px) {
   #filterArea {
@@ -705,17 +696,15 @@ iframe.game-frame {
     flex-direction: row;
     justify-content: space-between;
   }
-
   #searchInput {
     width: 100px;
     max-width: none;
     font-size: 16px !important;
   }
-
   .voice-header {
     font-size: 1em;
+    min-height: 2.2em; /* これで高さ統一 */
   }
-
   .voice-detail {
     font-size: 0.9em;
   }
