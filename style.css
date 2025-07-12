@@ -709,7 +709,7 @@ iframe.game-frame {
   #searchInput {
     width: 100px;
     max-width: none;
-    font-size: 0.9em;
+    font-size: 16px !important;
   }
 
   .voice-header {
