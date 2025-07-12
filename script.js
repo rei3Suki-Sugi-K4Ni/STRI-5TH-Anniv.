@@ -222,19 +222,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function filterAndSearch() {
   let filtered = voiceData;
-
   if (currentCategory !== "all") {
     filtered = filtered.filter(item => item.category === currentCategory);
   }
-
   if (currentKeyword.trim()) {
     const keyword = currentKeyword.toLowerCase();
     filtered = filtered.filter(item =>
+      (item.title || "").toLowerCase().includes(keyword) ||
       (item.text || "").toLowerCase().includes(keyword) ||
       (item.kana || "").toLowerCase().includes(keyword)
     );
   }
-
   renderList(filtered);
 }
 
