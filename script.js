@@ -155,15 +155,19 @@ mobileBtn.addEventListener('click', () => {
 });
 
 
-// ✅ script.js（完成版・voiceData.jsに対応）
+// ✅ script.js（完成版・リセットボタン付き）
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const voiceList = document.getElementById("voiceList");
   const filterButtons = document.querySelectorAll(".filter-btn");
+  const resetButton = document.getElementById("resetFilter");
+  const yearFilterBtn = document.getElementById("yearFilterBtn");
+  const yearDropdown = document.getElementById("yearDropdown");
 
   let currentCategory = "all";
   let currentKeyword = "";
+  let currentYear = null;
 
   function createVoiceEntry(item) {
     const entry = document.createElement("div");
@@ -171,12 +175,14 @@ document.addEventListener("DOMContentLoaded", () => {
     entry.style.width = "100%";
     entry.style.boxSizing = "border-box";
     entry.style.color = "#333";
+
     const header = document.createElement("div");
     header.className = "voice-header";
     header.style.display = "flex";
     header.style.alignItems = "center";
     header.style.justifyContent = "space-between";
-    // タイトルリンク（省略対応）
+
+    // タイトルリンク
     const titleLink = document.createElement("a");
     titleLink.href = item.url;
     titleLink.target = "_blank";
@@ -187,22 +193,24 @@ document.addEventListener("DOMContentLoaded", () => {
     titleLink.style.textOverflow = "ellipsis";
     titleLink.style.whiteSpace = "nowrap";
     titleLink.textContent = item.title || '(タイトルなし)';
+
     // 展開ボタン
     const caret = document.createElement("span");
     caret.className = "caret";
     caret.textContent = "v";
-    // 組み立て
+
     header.appendChild(titleLink);
     header.appendChild(caret);
+
     const detail = document.createElement("div");
     detail.className = "voice-detail";
     detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${item.title || '(タイトルなし)'}</strong></div><div>${item.text}</div>`;
     detail.style.display = "none";
 
-    // 折りたたみ処理（リンクじゃなくcaretで展開）
+    // 折りたたみ処理
     caret.style.cursor = "pointer";
     caret.addEventListener("click", (e) => {
-      e.stopPropagation(); // クリック伝播防止
+      e.stopPropagation();
       const isOpen = detail.style.display === "block";
       detail.style.display = isOpen ? "none" : "block";
       caret.textContent = isOpen ? "v" : "^";
@@ -222,12 +230,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function filterAndSearch() {
     let filtered = voiceData;
+
     if (currentCategory !== "all") {
       filtered = filtered.filter(item => item.category === currentCategory);
     }
-  if (currentYear) {
-    filtered = filtered.filter(item => item.date.startsWith(currentYear));
-  }
+
+    if (currentYear) {
+      filtered = filtered.filter(item => item.date.startsWith(currentYear));
+    }
+
     if (currentKeyword.trim()) {
       const keyword = currentKeyword.toLowerCase();
       filtered = filtered.filter(item =>
@@ -236,26 +247,28 @@ document.addEventListener("DOMContentLoaded", () => {
         (item.kana || "").toLowerCase().includes(keyword)
       );
     }
+
     renderList(filtered);
   }
 
-    const yearFilterBtn = document.getElementById("yearFilterBtn");
-    const yearDropdown = document.getElementById("yearDropdown");
-    let currentYear = null;
-
+  // 🔽 年代フィルタードロップダウン表示位置調整
   yearFilterBtn.addEventListener("click", () => {
-  const rect = yearFilterBtn.getBoundingClientRect();
-
-  yearDropdown.style.position = "absolute";
-  yearDropdown.style.top = `${rect.bottom + window.scrollY}px`;
-  yearDropdown.style.left = `${rect.left + window.scrollX}px`;
-
+    const rect = yearFilterBtn.getBoundingClientRect();
+    yearDropdown.style.position = "absolute";
+    yearDropdown.style.top = `${rect.bottom + window.scrollY}px`;
+    yearDropdown.style.left = `${rect.left + window.scrollX}px`;
     yearDropdown.classList.toggle("hidden");
   });
 
+  // 年代選択
   yearDropdown.querySelectorAll("button").forEach(btn => {
     btn.addEventListener("click", () => {
       currentYear = btn.dataset.year;
+
+      // アクティブ状態切り替え
+      yearDropdown.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
       yearDropdown.classList.add("hidden");
       filterAndSearch();
     });
@@ -274,6 +287,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // 検索バー
   searchInput.addEventListener("input", e => {
     currentKeyword = e.target.value;
+    filterAndSearch();
+  });
+
+  // ✅ リセットボタン
+  resetButton.addEventListener("click", () => {
+    // カテゴリをリセット
+    currentCategory = "all";
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    document.querySelector('.filter-btn[data-category="all"]').classList.add("active");
+
+    // 年代をリセット
+    currentYear = null;
+    yearDropdown.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+
+    // 検索バーもリセット
+    currentKeyword = "";
+    searchInput.value = "";
+
     filterAndSearch();
   });
 
