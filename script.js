@@ -269,6 +269,8 @@ document.addEventListener("DOMContentLoaded", () => {
       yearDropdown.querySelectorAll("button").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
+      yearFilterBtn.textContent = `${currentYear} ▼`;
+
       yearDropdown.classList.add("hidden");
       filterAndSearch();
     });
