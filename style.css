@@ -657,11 +657,11 @@ iframe.game-frame {
 /* フィルタボタン */
 .filter-btn {
   padding: 0.3em 0.8em;
-  margin-right: 0.5em;
+  margin-right: 0em;
   font-size: 0.9em;
   border: 1px solid #ccc;
   background-color: #f8f8f8;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 }
 .filter-btn.active {
@@ -678,8 +678,8 @@ iframe.game-frame {
   padding: 0.5em;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 1000;
+  font-size: 0.9em;
 }
-
 .dropdown button {
   display: block;
   width: 100%;
@@ -688,15 +688,23 @@ iframe.game-frame {
   background: none;
   text-align: left;
   cursor: pointer;
+  font-size: 0.9em;
 }
-
 .dropdown button:hover {
   background-color: #f0f0f0;
 }
-
 .hidden {
   display: none;
 }
+#resetFilter {
+  background-color: #eee;
+  color: #333;
+  border: 1px solid #bbb;
+}
+#resetFilter:hover {
+  background-color: #ddd;
+}
+
 /* カテゴリ＋検索 横並び */
 #filterArea {
   display: flex;
