@@ -669,6 +669,34 @@ iframe.game-frame {
   border-color: #ffb6c1;
   color: #fff;
 }
+/* ▼ 年代ポップアップの基本スタイル */
+.dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5em;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.3em;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown button:hover {
+  background-color: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}
 /* カテゴリ＋検索 横並び */
 #filterArea {
   display: flex;
