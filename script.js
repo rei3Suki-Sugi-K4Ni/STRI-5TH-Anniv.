@@ -302,7 +302,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 年代をリセット
     currentYear = null;
     yearDropdown.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
-
+    yearFilterBtn.textContent = "年代別 ▼";
+    
     // 検索バーもリセット
     currentKeyword = "";
     searchInput.value = "";
