@@ -655,13 +655,12 @@ iframe.game-frame {
   margin-top: 0.5em;
 }
 /* フィルタボタン */
-.filter-btn {
+.filter-btn, #resetFilter, .dropdown button {
   padding: 0.3em 0.8em;
-  margin-right: 0em;
   font-size: 0.9em;
+  border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #f8f8f8;
-  border-radius: 3px;
   cursor: pointer;
 }
 .filter-btn.active {
@@ -680,16 +679,7 @@ iframe.game-frame {
   z-index: 1000;
   font-size: 0.9em;
 }
-.dropdown button {
-  display: block;
-  width: 100%;
-  padding: 0.3em;
-  border: none;
-  background: none;
-  text-align: left;
-  cursor: pointer;
-  font-size: 1.1em;
-}
+
 .dropdown button:hover {
   background-color: #f0f0f0;
 }
@@ -708,18 +698,19 @@ iframe.game-frame {
 /* 🔧 フィルタエリア全体：改行OK、検索は右端に */
 #filterArea {
   display: flex;
-  flex-wrap: wrap; /* ← ここで改行許可 */
   justify-content: space-between;
   align-items: center;
   gap: 0.5em;
   margin-bottom: 1em;
 }
+
 /* 🔧 カテゴリボタン（左側） */
 #filterButtons {
   display: flex;
   flex-wrap: wrap; /* ← wrap OK に変更 */
   gap: 0.3em;
 }
+
 /* 🔧 検索バー（右寄せに固定） */
 #searchInput {
   margin-left: auto;  /* ← 右端へ押し出す */
@@ -729,19 +720,19 @@ iframe.game-frame {
   border-radius: 5px;
   width: 140px;        /* ← 固定幅で扱いやすく */
 }
+
 /* ✅ スマホ対応 */
 @media screen and (max-width: 480px) {
   #filterArea {
-    flex-direction: row;
-    flex-wrap: wrap; /* ← 明示的にwrap許可 */
-    justify-content: space-between;
+    flex-direction: column; /* ←ここ！縦並びにする */
+    align-items: flex-end;  /* 検索バーを右寄せにしたい場合 */
   }
   #searchInput {
-    width: 100%;
-    margin-left: 0;
-    margin-top: 0.3em;
+    width: 33%;             /* ←1/3幅くらい */
+    max-width: none;
     font-size: 16px !important;
   }
+}
   .voice-header {
     font-size: 1em;
     min-height: 2em;
