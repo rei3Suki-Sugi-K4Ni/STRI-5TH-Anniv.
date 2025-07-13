@@ -688,7 +688,7 @@ iframe.game-frame {
   background: none;
   text-align: left;
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 .dropdown button:hover {
   background-color: #f0f0f0;
@@ -705,44 +705,46 @@ iframe.game-frame {
   background-color: #ddd;
 }
 
-/* カテゴリ＋検索 横並び */
+/* 🔧 フィルタエリア全体：改行OK、検索は右端に */
 #filterArea {
   display: flex;
+  flex-wrap: wrap; /* ← ここで改行許可 */
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
   gap: 0.5em;
   margin-bottom: 1em;
 }
+/* 🔧 カテゴリボタン（左側） */
 #filterButtons {
   display: flex;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
+  flex-wrap: wrap; /* ← wrap OK に変更 */
+  gap: 0.3em;
 }
+/* 🔧 検索バー（右寄せに固定） */
 #searchInput {
-  flex-shrink: 0;
-  width: 120px;
-  max-width: 40%;
+  margin-left: auto;  /* ← 右端へ押し出す */
   font-size: 1em;
   padding: 0.2em 0.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 140px;        /* ← 固定幅で扱いやすく */
 }
-/* スマホ対応 */
+/* ✅ スマホ対応 */
 @media screen and (max-width: 480px) {
   #filterArea {
-    flex-wrap: nowrap;
     flex-direction: row;
+    flex-wrap: wrap; /* ← 明示的にwrap許可 */
     justify-content: space-between;
   }
   #searchInput {
-    width: 110px;
-    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.3em;
     font-size: 16px !important;
   }
   .voice-header {
     font-size: 1em;
-    min-height: 2em; /* これで高さ統一 */
+    min-height: 2em;
   }
   .voice-detail {
     font-size: 0.9em;
