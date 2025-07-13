@@ -220,21 +220,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-function filterAndSearch() {
-  let filtered = voiceData;
-  if (currentCategory !== "all") {
-    filtered = filtered.filter(item => item.category === currentCategory);
+  function filterAndSearch() {
+    let filtered = voiceData;
+    if (currentCategory !== "all") {
+      filtered = filtered.filter(item => item.category === currentCategory);
+    }
+  if (currentYear) {
+    filtered = filtered.filter(item => item.date.startsWith(currentYear));
   }
-  if (currentKeyword.trim()) {
-    const keyword = currentKeyword.toLowerCase();
-    filtered = filtered.filter(item =>
-      (item.title || "").toLowerCase().includes(keyword) ||
-      (item.text || "").toLowerCase().includes(keyword) ||
-      (item.kana || "").toLowerCase().includes(keyword)
-    );
+    if (currentKeyword.trim()) {
+      const keyword = currentKeyword.toLowerCase();
+      filtered = filtered.filter(item =>
+        (item.title || "").toLowerCase().includes(keyword) ||
+        (item.text || "").toLowerCase().includes(keyword) ||
+        (item.kana || "").toLowerCase().includes(keyword)
+      );
+    }
+    renderList(filtered);
   }
-  renderList(filtered);
-}
+
+    const yearFilterBtn = document.getElementById("yearFilterBtn");
+    const yearDropdown = document.getElementById("yearDropdown");
+    let currentYear = null;
+
+  yearFilterBtn.addEventListener("click", () => {
+  const rect = yearFilterBtn.getBoundingClientRect();
+
+  yearDropdown.style.position = "absolute";
+  yearDropdown.style.top = `${rect.bottom + window.scrollY}px`;
+  yearDropdown.style.left = `${rect.left + window.scrollX}px`;
+
+    yearDropdown.classList.toggle("hidden");
+  });
+
+  yearDropdown.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentYear = btn.dataset.year;
+      yearDropdown.classList.add("hidden");
+      filterAndSearch();
+    });
+  });
 
   // カテゴリボタン
   filterButtons.forEach(btn => {
