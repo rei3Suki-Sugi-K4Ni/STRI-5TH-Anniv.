@@ -695,52 +695,48 @@ iframe.game-frame {
   background-color: #ddd;
 }
 
-/* 🔧 フィルタエリア全体：改行OK、検索は右端に */
 #filterArea {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5em;
   margin-bottom: 1em;
 }
 
-/* 🔧 カテゴリボタン（左側） */
+/* 上段：カテゴリ＋年代＋リセットボタン */
 #filterButtons {
   display: flex;
-  flex-wrap: wrap; /* ← wrap OK に変更 */
+  flex-wrap: nowrap;              /* 改行させない！ */
+  overflow-x: auto;               /* はみ出たら横スクロール */
   gap: 0.3em;
 }
 
-/* 🔧 検索バー（右寄せに固定） */
+/* 下段：検索バーだけ右端に */
+#searchWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 検索バー本体 */
 #searchInput {
-  margin-left: auto;  /* ← 右端へ押し出す */
+  width: 33%;
+  min-width: 110px;
   font-size: 1em;
   padding: 0.2em 0.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 140px;        /* ← 固定幅で扱いやすく */
 }
 
-/* ✅ スマホ対応 */
+/* スマホでも拡大防止 */
+input[type="text"] {
+  font-size: 16px !important;
+}
+
+/* ✅ 追加：スマホで左に寄らないよう、デフォルトに影響しない補強 */
 @media screen and (max-width: 480px) {
-  #filterArea {
-    flex-direction: column; /* ←ここ！縦並びにする */
-    align-items: flex-end;  /* 検索バーを右寄せにしたい場合 */
+  #searchWrapper {
+    width: 100%;
   }
   #searchInput {
-    width: 33%;             /* ←1/3幅くらい */
-    max-width: none;
     font-size: 16px !important;
   }
-}
-  .voice-header {
-    font-size: 1em;
-    min-height: 2em;
-  }
-  .voice-detail {
-    font-size: 0.9em;
-  }
-}
-input[type="text"] {
-  font-size: 16px !important; /* スマホでズーム防止 */
 }
