@@ -25,12 +25,22 @@
 
   <main>
     <h2 style="text-align: center;">ショートボイス</h2>
-    <div id="filterArea">
-      <div id="filterButtons">
+    <div class="filter-bar">
+      <div class="category-buttons">
         <button class="filter-btn active" data-category="all">すべて</button>
         <button class="filter-btn" data-category="シチュボ">シチュボ</button>
         <button class="filter-btn" data-category="ゆるボ">ゆるボ</button>
+        <button id="yearFilterBtn">年代別 ▾</button>
       </div>
+    <!-- 年代ミニポップアップ（filterButtonsの直後か、bodyの下でもOK） -->
+    <div id="yearDropdown" class="dropdown hidden">
+      <button data-year="2020">2020</button>
+      <button data-year="2021">2021</button>
+      <button data-year="2022">2022</button>
+      <button data-year="2023">2023</button>
+      <button data-year="2024">2024</button>
+      <button data-year="2025">2025</button>
+    </div>
       <input type="text" id="searchInput" placeholder="キーワード検索" />
     </div>
     <div id="voiceList" class="voice-list"></div>
