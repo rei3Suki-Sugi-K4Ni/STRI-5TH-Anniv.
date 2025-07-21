@@ -207,7 +207,24 @@ footer {
   background-color: #575656;
   border: 0.1px solid #eaaac0;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  background-color: #d58484;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5em 0.7em;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: opacity 0.3s;
+}
 
+/* profile.html */
 .profile-table, .detail-table {
   width: 90%;
   max-width: 700px;
@@ -313,6 +330,7 @@ footer {
   color: rgb(200, 199, 199);
 }
 
+/* messages.html */
 .envelopes-container {
   display: flex;
   flex-wrap: wrap;
@@ -366,7 +384,6 @@ footer {
     right: 0.6em;
   }
 }
-
 .letter-popup {
   position: fixed;
   top: 50%;
@@ -416,6 +433,7 @@ footer {
   color: #444;
 }
 
+/* game.html */
 .game-embed {
   width: 100%;
   max-width: 100vw;
@@ -469,23 +487,7 @@ iframe.game-frame {
   display: none;
 }
 
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 1.5rem;
-  background-color: #d58484;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 0.5em 0.7em;
-  cursor: pointer;
-  display: none;
-  z-index: 9999;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  transition: opacity 0.3s;
-}
-
+/* survey.html */
 .result-section {
   padding: 1em;
 }
@@ -554,7 +556,7 @@ iframe.game-frame {
 }
 .q7-gap {
   width: 100%;
-  height: 0.5em; /* 行間の広さはここで調整 */
+  height: 0.5em;
 }
 .q6-legend {
   margin-top: 1em;
@@ -594,8 +596,6 @@ iframe.game-frame {
   align-items: flex-start;
   gap: 1.5em;
 }
-
-/* PCでのみ表示する凡例 */
 .pc-only {
   display: none;
 }
@@ -607,8 +607,6 @@ iframe.game-frame {
     line-height: 1.5;
   }
 }
-
-/* 📱スマホだけ表示 */
 .mobile-only {
   display: block;
 }
@@ -619,7 +617,6 @@ iframe.game-frame {
 }
 
 /* voice.html */
-/* 共通設定 */
 .voice-entry {
   margin-bottom: 1em;
   background-color: #fff;
@@ -642,8 +639,8 @@ iframe.game-frame {
   text-overflow: ellipsis;
 }
 .voice-header .caret {
-  font-size: 1.5em; /* ← 文字サイズを大きく */
-  padding: 0.3em 0.6em; /* ← 押せる領域を広げる（上下・左右） */
+  font-size: 1.5em;
+  padding: 0.3em 0.6em;
   margin-left: 1em;
   font-weight: normal;
   cursor: pointer;
@@ -654,7 +651,6 @@ iframe.game-frame {
   display: none;
   margin-top: 0.5em;
 }
-/* フィルタボタン */
 .filter-btn, #resetFilter, .dropdown button {
   padding: 0.3em 0.8em;
   font-size: 0.9em;
@@ -668,7 +664,6 @@ iframe.game-frame {
   border-color: #ffb6c1;
   color: #fff;
 }
-/* ▼ 年代ポップアップの基本スタイル */
 .dropdown {
   position: absolute;
   background-color: white;
@@ -679,7 +674,6 @@ iframe.game-frame {
   z-index: 1000;
   font-size: 0.9em;
 }
-
 .dropdown button:hover {
   background-color: #f0f0f0;
 }
@@ -694,31 +688,24 @@ iframe.game-frame {
 #resetFilter:hover {
   background-color: #ddd;
 }
-
 #filterArea {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
   margin-bottom: 1em;
 }
-
-/* 上段：カテゴリ＋年代＋リセットボタン */
 #filterButtons {
   display: flex;
-  flex-wrap: nowrap;              /* 改行させない！ */
-  overflow-x: auto;               /* はみ出たら横スクロール */
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 0.3em;
 }
-
-/* 下段：検索バーだけ右端に */
 #searchWrapper {
   display: flex;
   justify-content: flex-end;
    margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-
-/* 検索バー本体 */
 #searchInput {
   width: 33%;
   min-width: 110px;
@@ -727,13 +714,9 @@ iframe.game-frame {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
-/* スマホでも拡大防止 */
 input[type="text"] {
   font-size: 16px !important;
 }
-
-/* ✅ 追加：スマホで左に寄らないよう、デフォルトに影響しない補強 */
 @media screen and (max-width: 480px) {
   #searchWrapper {
     width: 100%;
