@@ -156,6 +156,7 @@ mobileBtn.addEventListener('click', () => {
 
 
 // voice.html
+
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const voiceList = document.getElementById("voiceList");
@@ -168,6 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentKeyword = "";
   let currentYear = null;
 
+  function highlightKeyword(text, keyword) {
+  if (!keyword) return text;
+  const regex = new RegExp(`(${keyword})`, "gi");
+  return text.replace(regex, '<mark>$1</mark>');
+  }
+  
   function createVoiceEntry(item) {
     const entry = document.createElement("div");
     entry.className = "voice-entry";
@@ -203,7 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const detail = document.createElement("div");
     detail.className = "voice-detail";
-    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${item.title || '(タイトルなし)'}</strong></div><div>${item.text}</div>`;
+    const highlightedText = highlightKeyword(item.text, currentKeyword);
+    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${item.title || '(タイトルなし)'}</strong></div><div>${highlightedText}</div>`;
     detail.style.display = "none";
 
     // 折りたたみ処理
@@ -313,4 +321,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初期表示
   renderList(voiceData);
 });
-
