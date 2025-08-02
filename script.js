@@ -198,7 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
     titleLink.style.overflow = "hidden";
     titleLink.style.textOverflow = "ellipsis";
     titleLink.style.whiteSpace = "nowrap";
-    titleLink.textContent = item.title || '(タイトルなし)';
+    const highlightedTitle = highlightKeyword(item.title || '(タイトルなし)', currentKeyword);
+    titleLink.innerHTML = highlightedTitle;
 
     // 展開ボタン
     const caret = document.createElement("span");
@@ -211,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const detail = document.createElement("div");
     detail.className = "voice-detail";
     const highlightedText = highlightKeyword(item.text, currentKeyword);
-    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${item.title || '(タイトルなし)'}</strong></div><div>${highlightedText}</div>`;
+    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${highlightedTitle}</strong></div><div>${highlightedText}</div>`;
     detail.style.display = "none";
 
     // 折りたたみ処理
