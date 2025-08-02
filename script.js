@@ -155,8 +155,7 @@ mobileBtn.addEventListener('click', () => {
 });
 
 
-// ✅ script.js（完成版・リセットボタン付き）
-
+// voice.html
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const voiceList = document.getElementById("voiceList");
@@ -314,3 +313,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初期表示
   renderList(voiceData);
 });
+
