@@ -725,3 +725,8 @@ input[type="text"] {
     font-size: 16px !important;
   }
 }
+mark {
+  background-color: #ffff66; /* 黄色系の蛍光ペン色 */
+  padding: 0 2px;
+  border-radius: 2px;
+}
