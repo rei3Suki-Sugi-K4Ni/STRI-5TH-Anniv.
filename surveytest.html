@@ -1,174 +1,182 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>アンケート｜世田れい5周年ファンサイト</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<title>座談会サンプル</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @font-face {
+    font-family: 'YasashisaGothic';
+    src: url('assets/07やさしさゴシック.ttf') format('truetype');
+  }
+  body {
+    font-family: 'YasashisaGothic', sans-serif;
+    background-color: #FAFAF7;
+    margin: 0;
+    padding: 10px;
+  }
+  .top-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  .member {
+    width: 48%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 12px; /* 自己紹介2行に収まるよう小さめ */
+    line-height: 1.2;
+  }
+  .member img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 3px auto;
+  }
+  .topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .topic {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  .topic h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .topic p {
+    font-size: 14px;
+    margin: 4px 0;
+    line-height: 1.4;
+    text-indent: 1em; /* ぶら下げインデント */
+  }
+  .topic p::first-line {
+    text-indent: 0; /* 先頭行はインデントなし */
+  }
+  .topic img {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <img src="assets/header1.PNG" alt="ヘッダー画像" class="logo" />
-  </header>
 
-  <nav class="nav-tabs-grid">
-    <a href="index.html">トップ</a>
-    <a href="profile.html">プロフィール</a>
-    <a href="messages.html">メッセージ</a>
-    <a href="game.html">ゲーム</a>
-    <a href="survey.html" class="active">アンケート</a>
-    <span class="empty-tab"></span>
-  </nav>
+<img src="assets/top_image.jpg" alt="談笑画像" class="top-image">
 
-  <main>
-    <h2 style="text-align: center;">アンケート</h2>
+<div class="members">
+  <div class="member">
+    <img src="assets/ASMR.jpg" alt="メンバー1">
+    ASMR<br>自己紹介の文章がここに入ります。短く2行。<br>自己紹介の文章がここに入ります。短く2行。
+  </div>
+  <div class="member">
+    <img src="assets/laaco.jpg" alt="メンバー2">
+    laaco<br>自己紹介の文章がここに入ります。短く2行。<br>自己紹介の文章がここに入ります。短く2行。
+  </div>
+  <div class="member">
+    <img src="assets/hotaate.jpg" alt="メンバー3">
+    hotaate<br>自己紹介の文章がここに入ります。短く2行。<br>自己紹介の文章がここに入ります。短く2行。
+  </div>
+  <div class="member">
+    <img src="assets/kani.jpg" alt="メンバー4">
+    kani<br>自己紹介の文章がここに入ります。短く2行。<br>自己紹介の文章がここに入ります。短く2行。
+  </div>
+</div>
 
-    <section class="result-section">
-      <div class="chart-row">
-        <div class="chart-block">
-          <p class="question-title">Q1.れいさんは “いい人” だと思う？</p>
-          <img src="assets/chart (1).png" alt="Q1グラフ" />
-        </div>
-        <div class="chart-block">
-          <p class="question-title">Q2. れいさんは かわいい？ かっこいい？</p>
-          <img src="assets/chart (2).png" alt="Q2グラフ" />
-        </div>
-      </div>
-          
-      <div class="chart-row">
-        <div class="chart-block">
-          <p class="question-title">Q3.「生意気な後輩シリーズ」で特に好きなのは？</p>
-          <img src="assets/chart (6).png" alt="Q6グラフ" />
-        </div>
-      </div>
+<div class="topics">
+  <!-- トピック1 -->
+  <div class="topic">
+    <h4>トピック1：ファンミーティング感想</h4>
+    <p>🧸: めちゃくちゃ楽しかった！最初は緊張したけど、みんなの顔を見たら安心したよ。</p>
+    <p>🐨: わかる！思ったより和やかで、笑いが絶えなかったね。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
 
-          <div class="q6-legend">
-          <ul><br>
-            <li><span class="legend-dot" style="background-color:#66c2a5"></span> 会社の女上司を落としたい後輩の女の子（一人でしたりするんですか？）</li>
-            <li><span class="legend-dot" style="background-color:#fc8d62"></span> 生意気な後輩が電話で甘えてくる（飲み会に先輩が来なくて拗ねて電話）</li>
-            <li><span class="legend-dot" style="background-color:#8da0cb"></span> 嫉妬深い後輩と天然な先輩（デートに誘われた相談に嫉妬＋おまけ）</li>
-            <li><span class="legend-dot" style="background-color:#e78ac3"></span> 生意気な後輩といちゃいちゃ（吐息、リップ音注意）</li>
-            <li><span class="legend-dot" style="background-color:#a6d854"></span> 生意気な後輩が先輩にいじわるしちゃう（同僚ってそういうもん）</li>
-            <li><span class="legend-dot" style="background-color:#ffd92f"></span> 嫉妬して怒った後輩から電話（同じ部署の後輩の子を泊めた先輩に嫉妬）</li>
-            <li><span class="legend-dot" style="background-color:#e5c494"></span> 先輩を眠らせて縛っちゃった生意気な後輩の独り言</li>
-            <li><span class="legend-dot" style="background-color:#b3b3b3"></span> 生意気な後輩と先輩で宅飲み（デートして、ちゅーして、次は？）</li>
-            <li><span class="legend-dot" style="background-color:#1f78b4"></span> 後輩ちゃんが先輩と電話でいちゃいちゃ（Ｒ１８）</li>
-            <li><span class="legend-dot" style="background-color:#33a02c"></span> 生意気な後輩と先輩のいちゃいちゃの朝（きもちいと何も考えられない）</li>
-            <li><span class="legend-dot" style="background-color:#fb9a99"></span> 生意気な後輩と夜更かしベッドでお喋り（目隠しとかちょっとこわい？）</li>
-            <li><span class="legend-dot" style="background-color:#cab2d6"></span> 生意気な後輩ちゃんとCANDY KISSING CHALLENGE</li>
-            <li><span class="legend-dot" style="background-color:#fdbf6f"></span> 一人でシてた先輩を問い詰める</li>
-            <li><span class="legend-dot" style="background-color:#a6cee3"></span> 後輩から「可愛い」攻め＆指舐め強要</li>
-          </ul>
-        </div>
-      </div>
-        <br><br>
+  <!-- トピック2 -->
+  <div class="topic">
+    <h4>トピック2：最近ハマってること</h4>
+    <p>🧸: 最近はカフェ巡りが楽しくて、写真もいっぱい撮ってるんだ。</p>
+    <p>🐨: 写真見せてほしい！インスタにあげてる？</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+    <img src="assets/smartphone_penguin.png" alt="補足画像">
+  </div>
 
-    <p>⇩こちら🧸はれいさんへの親密さや下ネタを含みます。<br>　そういった内容が苦手な方は開かずスルーしてください。</p>
-    <button class="accordion-button" style="background-color:#d58484">🧸 会いたい？／どんな友達になりたい？／するなら？ </button>
-    <div class="accordion-content">
+  <!-- トピック3 -->
+  <div class="topic">
+    <h4>トピック3：次回企画について</h4>
+    <p>🧸: 次はもっとカジュアルな雰囲気でもいいかも。</p>
+    <p>🐨: それなら参加しやすくていいね。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
 
-      <div class="chart-row">
-        <div class="chart-block">
-          <p class="question-title">Q4.れいさんに会いたい？<span style="font-size: 0.7em;">（現実的な事情はさておき）</span></p>
-          <img src="assets/chart (3).png" alt="Q3グラフ" />
-        </div>
-        <div class="chart-block">
-          <p class="question-title">Q5.れいさんとどんなお友達になりたい？</p>
-          <img src="assets/chart (4).png" alt="Q4グラフ" />
-        </div>
-      </div>
+  <!-- トピック4 -->
+  <div class="topic">
+    <h4>トピック4：自由トーク</h4>
+    <p>🧸: 最近の面白かったことを共有するよ。</p>
+    <p>🐨: ぜひ！</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
 
-      <div class="chart-row">
-        <div class="chart-block">
-          <p class="question-title">Q6.流れでするなら？</p>
-          <img src="assets/chart (5).png" alt="Q5グラフ" />
-        </div>
-      </div>
-    </div>
+  <!-- トピック5 -->
+  <div class="topic">
+    <h4>トピック5：質問コーナー</h4>
+    <p>🧸: 好きな映画は？</p>
+    <p>🐨: 最近はホラーかな。でもコメディも捨てがたい。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
 
-    <br><br><br>
-      <h3 class="question-title">Q7.れいさんをオススメするならなんて紹介する？</h3>
-      <div class="q7-flex-wrap">
-        <img src="assets/yuruitya.jpg" alt="ゆる" class="q7-img" />
-        <div class="q7-comment-box">
-          <span class="q7-bubble">オススメしたくない 絶対に好きになっちゃうから</span>
-          <span class="q7-bubble">とにかく声がいい＋人柄も良くて歌も上手くて沼る</span>
-          <span class="q7-bubble">いったん世田れいしてみて 絶対好きになるから</span>
-          <span class="q7-bubble">沼</span>
-          <span class="q7-bubble">吸い込まれていくように好きになってしまう</span>
-          <span class="q7-bubble">声が良い</span>
-          <span class="q7-bubble">可愛いとかっこいいを持ち合わせるずるい人</span>
-          <span class="q7-bubble">至高のS</span>
-          <span class="q7-bubble">ボイスが自然で実際に話してる気分になる</span>
-          <span class="q7-bubble">中毒性あり</span>
-          <span class="q7-bubble">オススメしたくない（隠しておきたい）</span>
-          <span class="q7-bubble">沼らせ上手</span>
-          <span class="q7-bubble">人間力が高く優しくて可愛いエロの天才</span>
-          <span class="q7-bubble">かわいい人</span>
-          <span class="q7-bubble">一度聞いたら忘れられない声の持ち主</span>
-          <span class="q7-bubble">perfect</span>
-          <span class="q7-bubble">可愛くてかっこよくてギャップが最高</span>
-          <span class="q7-bubble">沼らしてくる人</span>
-          <span class="q7-bubble">私が初めて思ったかっこいい人です！</span>
-          <span class="q7-bubble">甘えさせてくれる</span>
-          <span class="q7-bubble">歌が上手くてとてもいい声の持ち主</span>
-          <span class="q7-bubble">ふわふわ癒し属性</span>
-          <span class="q7-bubble">遠隔なのにその気にさせる天才</span>
-          <span class="q7-bubble">oh……numa…</span>
-          <span class="q7-bubble">誰の話でもちゃんと聞いてくれる</span>
-          <span class="q7-bubble">気づいたら沼ってる</span>
-          <span class="q7-bubble">天性の魅力と知性を兼ね備えた人</span>
-          <span class="q7-bubble">声で人を惚れさせる人</span>
-          <span class="q7-bubble">好きになってよかったと想える人</span>
-          <span class="q7-bubble">したたかなる末っ子根性</span>
-          <span class="q7-bubble">可愛くてカッコよくて歌が上手い</span>
-          <span class="q7-bubble">価値観を変える人たらし</span>
-          <span class="q7-bubble">二度と抜けられない沼お姉さん</span>
-          <span class="q7-bubble">癒しと元気を与えてくれる</span>
-          <span class="q7-bubble">沼らせ上手でいつも翻弄される</span>
-          <span class="q7-bubble">天使なのかなっていう疑惑</span>
-        <div class="q7-gap"></div> <!-- ←改行の代わり -->
-          <span class="q7-bubble">きっと好きになるよ。キミには素質があるからね。</span>
-          <span class="q7-bubble">不思議な程その時に一番欲しい言葉をくれる</span>
-          <span class="q7-bubble">甘えたいけど甘えられない人にこそ</span>
-          <span class="q7-bubble">弄ばれたくなる</span>
-          <span class="q7-bubble">なんやかんや真面目</span>
-          <span class="q7-bubble">魅力の底がない</span>
-          <span class="q7-bubble">言語化能力が高い</span>
-          <span class="q7-bubble">笑い声も笑い方もかわいい</span>
-          <span class="q7-bubble">英語も関西弁も標準語もいい</span>
-          <span class="q7-bubble">すべて見透かされてる</span>
-          <span class="q7-bubble">好きすぎ注意</span>
-          <span class="q7-bubble">普通に勘違いする</span>
-          <span class="q7-bubble">距離のとり方・詰め方が絶妙</span>
-          <span class="q7-bubble">期待させるのがうまい</span>
-          <span class="q7-bubble">心の緊縛師とさせていただく</span>
-          <span class="q7-bubble">嫉妬心を芽生えさせられる</span>
-          <span class="q7-bubble">100点満点の飴と鞭</span>
-          <span class="q7-bubble">依存の意味を知ることになる</span>
-          <span class="q7-bubble">知らない方が平穏に生きられるかもしれない</span>
-        </div>
-      </div>
-    </section>
+  <!-- トピック6 -->
+  <div class="topic">
+    <h4>トピック6：趣味の話</h4>
+    <p>🧸: 最近始めた趣味は？</p>
+    <p>🐨: ヨガと手作りキャンドル。リラックスできるんだ。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
 
-    <section id="questionnaire" style="font-size: 0.9em;">
-    <p>
-      <span>れいさんのファンの方に聞いてみたかったことをアンケートにしました。よかったら、気軽に答えてもらえるとうれしいです。</span><br>
-      <span style="text-decoration: line-through;">※フォーム公開期間は、サイト公開から1週間を予定しています。</span><br>
-      <span style="text-decoration: line-through;">※フォームの公開は日本時間の7/4 24:00までとさせていただきます。</span><br>
-    </p>
-    <p>
-      <a href="https://t.co/rk4QWFdUTM" target="_blank" rel="noopener" style="text-decoration: line-through;">▶ アンケートフォームはこちら（ログイン不要です）</a><br>
-      <span><strong>※募集は終了しました。ご協力ありがとうございました！</strong></span>
-    </p>
-    </section>
-    
-  </main>
+  <!-- トピック7 -->
+  <div class="topic">
+    <h4>トピック7：旅の思い出</h4>
+    <p>🧸: 旅行で一番印象に残ってる場所は？</p>
+    <p>🐨: 北海道の温泉かな。景色が最高だった。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
 
-  <button id="backToTop" class="back-to-top" title="トップに戻る">▲</button>  
-  <footer>
-    <p>&copy; 2025 rei3daisukiclub🦀</p>
-  </footer>
+  <!-- トピック8 -->
+  <div class="topic">
+    <h4>トピック8：最近のチャレンジ</h4>
+    <p>🧸: 新しいことに挑戦したことある？</p>
+    <p>🐨: 英語でスピーチをやってみた。緊張したけど楽しかった。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
+
+  <!-- トピック9 -->
+  <div class="topic">
+    <h4>トピック9：最後にひとこと</h4>
+    <p>🧸: 今日のファンミ本当に楽しかった！</p>
+    <p>🐨: これからもみんなで楽しもうね。</p>
+    <p>🧸: 会話</p>
+    <p>🐨: 会話</p>
+  </div>
+</div>
+
 </body>
 </html>
