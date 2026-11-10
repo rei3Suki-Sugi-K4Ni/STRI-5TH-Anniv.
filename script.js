@@ -90,24 +90,29 @@ document.addEventListener("DOMContentLoaded", function () {
       const popup = document.createElement("div");
       popup.className = "letter-popup";
       popup.innerHTML = `
-        <div class="content">${message}</div>
-        <span class="sender">― ${sender}</span>
+        <div class="letter-text">${message}</div>
+        <span class="letter-sender">― ${sender}</span>
       `;
 
       const overlay = document.createElement("div");
-      overlay.style.position = "fixed";
-      overlay.style.top = "0";
-      overlay.style.left = "0";
-      overlay.style.width = "100%";
-      overlay.style.height = "100%";
-      overlay.style.zIndex = "9999";
+      overlay.className = "message-popup-overlay";
+
+      const originalPaddingRight = document.body.style.paddingRight;
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      const bodyPaddingRight = parseFloat(getComputedStyle(document.body).paddingRight) || 0;
+      document.body.style.paddingRight = `${bodyPaddingRight + scrollbarWidth}px`;
 
       overlay.appendChild(popup);
       document.body.appendChild(overlay);
+      document.documentElement.classList.add("message-popup-open");
+      document.body.classList.add("message-popup-open");
 
       overlay.addEventListener("click", function (e) {
         if (e.target === overlay) {
           document.body.removeChild(overlay);
+          document.documentElement.classList.remove("message-popup-open");
+          document.body.classList.remove("message-popup-open");
+          document.body.style.paddingRight = originalPaddingRight;
         }
       });
     });
@@ -178,33 +183,32 @@ document.addEventListener("DOMContentLoaded", () => {
   function createVoiceEntry(item) {
     const entry = document.createElement("div");
     entry.className = "voice-entry";
-    entry.style.width = "100%";
-    entry.style.boxSizing = "border-box";
-    entry.style.color = "#333";
 
     const header = document.createElement("div");
     header.className = "voice-header";
-    header.style.display = "flex";
-    header.style.alignItems = "center";
-    header.style.justifyContent = "space-between";
 
     // タイトルリンク
     const titleLink = document.createElement("a");
+    titleLink.className = "voice-title-link";
     titleLink.href = item.url;
     titleLink.target = "_blank";
-    titleLink.style.textDecoration = "none";
-    titleLink.style.color = "inherit";
-    titleLink.style.flex = "1";
-    titleLink.style.overflow = "hidden";
-    titleLink.style.textOverflow = "ellipsis";
-    titleLink.style.whiteSpace = "nowrap";
     const highlightedTitle = highlightKeyword(item.title || '(タイトルなし)', currentKeyword);
-    titleLink.innerHTML = highlightedTitle;
+    const titleText = document.createElement("span");
+    titleText.className = "voice-title-text";
+    titleText.innerHTML = highlightedTitle;
+    const externalLinkIcon = document.createElement("span");
+    externalLinkIcon.className = "voice-external-link";
+    externalLinkIcon.setAttribute("aria-hidden", "true");
+    externalLinkIcon.textContent = "↗";
+    titleLink.append(titleText, externalLinkIcon);
 
     // 展開ボタン
-    const caret = document.createElement("span");
+    const caret = document.createElement("button");
+    caret.type = "button";
     caret.className = "caret";
-    caret.textContent = "v";
+    caret.setAttribute("aria-expanded", "false");
+    caret.setAttribute("aria-label", `詳細を開く: ${item.title || 'タイトルなし'}`);
+    caret.textContent = "⌄";
 
     header.appendChild(titleLink);
     header.appendChild(caret);
@@ -212,16 +216,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const detail = document.createElement("div");
     detail.className = "voice-detail";
     const highlightedText = highlightKeyword(item.text, currentKeyword);
-    detail.innerHTML = `<hr><div><strong>${item.date}</strong>：<strong>${highlightedTitle}</strong></div><div>${highlightedText}</div>`;
+    detail.innerHTML = `<hr><div class="voice-date"><strong>${item.date}</strong>：<strong>${highlightedTitle}</strong></div><div class="voice-transcript">${highlightedText}</div>`;
     detail.style.display = "none";
 
     // 折りたたみ処理
-    caret.style.cursor = "pointer";
     caret.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = detail.style.display === "block";
       detail.style.display = isOpen ? "none" : "block";
-      caret.textContent = isOpen ? "v" : "^";
+      caret.setAttribute("aria-expanded", String(!isOpen));
+      caret.setAttribute("aria-label", `${isOpen ? "詳細を開く" : "詳細を閉じる"}: ${item.title || 'タイトルなし'}`);
+      caret.textContent = isOpen ? "⌄" : "⌃";
     });
 
     entry.appendChild(header);
@@ -261,11 +266,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🔽 年代フィルタードロップダウン表示位置調整
   yearFilterBtn.addEventListener("click", () => {
+    yearDropdown.classList.toggle("hidden");
+    if (yearDropdown.classList.contains("hidden")) return;
+
     const rect = yearFilterBtn.getBoundingClientRect();
     yearDropdown.style.position = "absolute";
     yearDropdown.style.top = `${rect.bottom + window.scrollY}px`;
-    yearDropdown.style.left = `${rect.left + window.scrollX}px`;
-    yearDropdown.classList.toggle("hidden");
+    const minLeft = window.scrollX + 8;
+    const maxLeft = Math.max(
+      minLeft,
+      window.scrollX + document.documentElement.clientWidth - yearDropdown.offsetWidth - 8
+    );
+    yearDropdown.style.left = `${Math.max(minLeft, Math.min(rect.left + window.scrollX, maxLeft))}px`;
   });
 
   // 年代選択
