@@ -22,7 +22,7 @@
     <a href="game.html">ゲーム</a>
   </nav>
 
-  <main>
+  <main class="voice-page">
     <h2 style="text-align: center;">ショートボイス</h2>
     <p class="notice">
       タイトルをタップすると該当ツイートへ移動します。<br>
@@ -34,9 +34,12 @@
         <button class="filter-btn active" data-category="all">すべて</button>
         <button class="filter-btn" data-category="シチュボ">シチュボ</button>
         <button class="filter-btn" data-category="ゆるボ">ゆるボ</button>
-        /
+        <span class="filter-separator" aria-hidden="true">/</span>
         <button id="yearFilterBtn">年代別 ▼</button>
         <button id="resetFilter" class="filter-btn">クリア</button>
+      </div>
+      <div id="searchWrapper">
+        <input type="text" id="searchInput" placeholder="キーワード検索" />
       </div>
       <div id="yearDropdown" class="dropdown hidden">
         <button data-year="2020">2020</button>
@@ -47,9 +50,6 @@
         <button data-year="2025">2025</button>
       </div>
     </div>
-    <div id="searchWrapper">
-      <input type="text" id="searchInput" placeholder="キーワード検索" />
-    </div>
     <div id="voiceList" class="voice-list"></div>
   </main>
 
@@ -59,4 +59,3 @@
   </footer>
 </body>
 </html>
-
