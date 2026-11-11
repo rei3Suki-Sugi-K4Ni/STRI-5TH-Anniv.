@@ -499,16 +499,19 @@ body.message-popup-open {
   max-width: 100%;
   margin: 0 auto;  
 }
-@media screen and (min-width: 768px) {
-  .game-frame-wrapper {
-    height: 570px;
-  }
-}
 .game-frame-scaler {
   transform: scale(0.9);
   transform-origin: top center;
   width: 125%;
   height: 125%;
+}
+@media screen and (min-width: 768px) {
+  .game-frame-wrapper {
+    height: 670px;
+  }
+  .game-frame-scaler {
+    height: 106.35%;
+  }
 }
 iframe.game-frame {
   width: 100%;
